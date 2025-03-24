@@ -10,3 +10,4 @@ select * from fatture  full outer join clienti on fatture.id_cliente = clienti.n
 
 select numero_fattura, importo, iva, data_fattura, denominazione from fatture left outer join fornitori using (numero_fornitore)
 
+select count(iva) as numero_fatture_per_anno from fatture where iva = 20 group by extract (year from data_fattura) 
