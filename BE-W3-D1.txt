@@ -1,0 +1,12 @@
+select nome from clienti where nome='Mario'
+
+select nome, cognome from clienti where anno_di_nascita = 1982
+
+select count(*) as numero_fatture_con_iva_al_20 from fatture  where iva = 20;
+
+select * from prodotti where extract(year from data_attivazione) = 2017 and in_commercio = true
+
+select * from fatture  full outer join clienti on fatture.id_cliente = clienti.numero_cliente where importo < 1000
+
+select numero_fattura, importo, iva, data_fattura, denominazione from fatture left outer join fornitori using (numero_fornitore)
+
